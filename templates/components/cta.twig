@@ -1,0 +1,32 @@
+{% extends "base/component.twig" %}
+
+{% set name = "cta" %}
+{% set container_element = 'div' %}
+{% set container_aria_label = NULL %}
+
+{% block content %}
+
+  <div class='inner-wrapper'>
+    {% include "fields/eyebrow.twig" with {
+      eyebrow: eyebrow
+    } only %}
+
+    {% include 'fields/section-title.twig' with {
+      title: title
+    } only %}
+
+    {% include "fields/description.twig" with {
+      description: description
+    } only %}
+
+    {% include "fields/image.twig" with {
+      image: image
+    } only %}
+
+    {% include "fields/link.twig" with {
+      href: link.href,
+      cta: link.cta
+    } only %}
+  </div>
+
+{% endblock %}

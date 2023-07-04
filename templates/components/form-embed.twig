@@ -1,0 +1,23 @@
+{% extends "base/component.twig" %}
+
+{% set name = "form-embed" %}
+{% set container_element = 'section' %}
+{% set container_aria_label = NULL %}
+
+{% block content %}
+
+  <div class='inner-wrapper'>
+    {% include 'fields/section-title.twig' with {
+      title: title
+    } only %}
+
+    {% include "fields/description.twig" with {
+      description: description
+    } only %}
+
+    <div class='form-container'>
+      {{ script|raw }}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% set name = 'article-hero' %}
+{% set container_element = 'section' %}
+{% set container_aria_label = NULL %}
+
+
+{% block content %}
+
+  {% include 'fields/image.twig' with {
+    image: image
+  } only %}
+
+  {% include 'fields/page-title.twig' with {
+    title: title
+  } only %}
+
+  <p class="article-author">
+    By: {{ post.author }} <br> <span> || </span> {{ post.date|date('Y-m-d H:i:s') }}
+  </p>
+
+{% endblock %}

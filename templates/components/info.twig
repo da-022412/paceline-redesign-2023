@@ -1,0 +1,34 @@
+{% extends 'base/component.twig' %}
+
+{% set name = 'info' %}
+{% set container_element = 'section' %}
+{% set container_aria_label = NULL %}
+
+{% block content %}
+
+    <div class='inner-wrapper'>
+      {% include 'fields/section-title.twig' with {
+        title: title
+      } only %}
+
+      <div class='number-container'>
+        <div class='number'>
+          <span>{{ number.number }}</span>
+        </div>
+
+        <div class='number-copy'>
+          <span>{{ number.copy }}</span>
+        </div>
+      </div>
+
+      {% include 'fields/description.twig' with {
+        description: description
+      } only %}
+
+      {% include 'fields/link.twig' with {
+        href: link.href,
+        cta: link.cta
+      } only %}
+    </div>
+
+{% endblock %}

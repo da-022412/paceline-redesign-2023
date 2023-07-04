@@ -1,0 +1,22 @@
+{% extends "base-full.twig" %}
+
+{% set template_name = 'page-erewhon' %}
+{% set layout_name = 'full' %}
+
+{% set info = post.meta('info') %}
+
+{% block content %}
+
+  {% include 'components/basic-hero.twig' with {
+    image: Image(post.meta('hero_image')),
+    logo: Image(post.meta('logo'))
+  } %}
+
+  {% include 'components/info.twig' with {
+    title: info.section_title,
+    number: info.number,
+    description: info.description,
+    link: info.link
+  } %}
+
+{% endblock %}

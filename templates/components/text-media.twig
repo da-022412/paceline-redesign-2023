@@ -1,0 +1,36 @@
+{% extends "base/component.twig" %}
+
+{% set name = "text-media" %}
+{% set container_element = 'div' %}
+{% set container_aria_label = NULL %}
+
+{% block content %}
+
+    <div class='flex-container'>
+      {% if video %}
+        <div class='video-container'>
+          <div class='f--video'>
+            <video muted autoplay playinline loop>
+              <source src={{ videoSrc }} type='video/mp4' />
+              Your browser does not support HTML video.
+            </video>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class='text-container'>
+        {% include 'fields/section-title.twig' with {
+          title: title
+        } only %}
+
+        {% include "fields/image.twig" with {
+          image: image
+        } only %}
+
+        {% include 'fields/description.twig' with {
+          description: description
+        } only %}
+      </div>
+    </div>
+
+{% endblock %}

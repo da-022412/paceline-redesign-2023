@@ -1,0 +1,22 @@
+{% extends 'component.twig' %}
+
+{% set name = 'basic-hero' %}
+{% set container_element = 'section' %}
+{% set container_aria_label = NULL %}
+
+
+{% block content %}
+
+  <div class='image-container'>
+    {% include 'fields/image.twig' with {
+      image: image
+    } only %}
+  </div>
+
+  <div class='logo-container'>
+    {% include 'fields/image.twig' with {
+      image: logo
+    } only %}
+  </div>
+
+{% endblock %}

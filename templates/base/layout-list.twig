@@ -1,0 +1,35 @@
+{% for layout in layouts %}
+
+  {% if layout.name == 'full' %}
+
+    {# BEGIN full layout #}
+
+    {% embed 'base/layout-full.twig' %}
+
+      {% block content %}
+
+        {% include "base/component-list.twig" with { name: 'content', components: layout.content } %}
+
+      {% endblock content %}
+
+    {% endembed %}
+
+  {% endif %}
+
+  {% if layout.name == 'content-detail' %}
+
+    {# BEGIN full layout #}
+
+    {% embed 'base/layout-content-detail.twig' %}
+
+      {% block content %}
+
+        {% include "base/component-list.twig" with { name: 'content', components: layout.content } %}
+
+      {% endblock content %}
+
+    {% endembed %}
+
+  {% endif %}
+
+{% endfor %}

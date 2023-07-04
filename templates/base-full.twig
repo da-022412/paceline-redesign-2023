@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% set layout_name = layout_name | default('default') %}
+
+{% set template_name = template_name | default('default') %}
+
+{% block layout_content %}
+
+	<section class="tc--template-container tc--{{ template_name }}">
+
+		<div class="t--template t--{{ template_name }}">
+			{% if block('top')|trim is not empty %}
+				<div class="content-top" aria-label="Content Top">
+					<div class="lc--layout-container lc--{{ layout_name }}">
+						<div class="l--layout l--{{ layout_name }}">
+							<div class="lr--layout-region lr--main">
+									{% block top %}{% endblock top %}
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+			
+			<div class="content-main" aria-label="Content Main">
+				<div class="lc--layout-container lc--{{ layout_name }}">
+					<div class="l--layout l--{{ layout_name }}">
+						<div class="lr--layout-region lr--main">
+							{% block content %}{% endblock content %}
+						</div>
+					</div>
+				</div>
+
+				{% if block('bottom')|trim is not empty %}
+					<div class="content-bottom" aria-label="Content Bottom"> 
+						{% block bottom %}
+						{% endblock bottom %}
+					</div>
+				{% endif %}
+				
+			</div>
+		</div>
+		<!-- t--template t--{{ template_name }} -->
+
+	</section>
+	<!-- tc--template-container tc--{{ template_name }} -->
+
+{% endblock layout_content %}

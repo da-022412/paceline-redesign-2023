@@ -1,0 +1,37 @@
+{% extends "base/component.twig" %}
+
+{% set name = "three-up-cards" %}
+{% set container_element = 'div' %}
+{% set container_aria_label = NULL %}
+
+{% block content %}
+
+  <div class='inner-wrapper'>
+    {% include 'fields/section-title.twig' with {
+      title: title
+    } only %}
+
+    <div class='cards-container'>
+      {% for card in cards %}
+        <div class='f--card'>
+          {% include "fields/eyebrow.twig" with {
+            eyebrow: card.eyebrow
+          } only %}
+
+          {% include "fields/image.twig" with {
+            image: card.image
+          } only %}
+
+          {% include 'fields/cta-title.twig' with {
+            title: card.title
+          } only %}
+
+          {% include 'fields/description.twig' with {
+            description: card.description
+          } only %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base/component.twig" %}
+
+{% set name = "rich-text" %}
+{% set container_element = 'div' %}
+{% set container_aria_label = NULL %}
+
+
+{% block content %}
+
+  {% include "fields/wysiwyg.twig" with { markup: markup } only %}
+
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends "base/field.twig" %}
+
+{% set name = "link" %}
+
+{% set title = title | default(cta) %}
+
+{% set url = url | default(href) %}
+
+{% if link is not empty %}
+
+  {% set title = link.title %}
+
+  {% set url = link.url %}
+
+  {% set ariaLabel = link.ariaLabel %}
+
+  {% set target = link.target %}
+
+{% endif %}
+
+{% block content %}
+
+  {% include "base/link.twig" with {
+    "title": title,
+    "url": url,
+    "ariaLabel": ariaLabel,
+    "target": target,
+  } %}
+
+{% endblock %}

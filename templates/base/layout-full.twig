@@ -1,0 +1,17 @@
+{% extends "base/layout.twig" %}
+
+{% set layout_name = "full" %}
+
+{% block layout_content %}
+
+  <div class="lr--layout-region lr--main">
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block bottom %}
+    {% endblock bottom %}
+
+  </div>
+
+{% endblock layout_content %}

@@ -1,0 +1,51 @@
+{% extends 'base/component.twig' %}
+
+{% set name = 'article-cards' %}
+{% set container_element = 'section' %}
+{% set container_aria_label = NULL %}
+
+
+{% block content %}
+
+  <div class='inner-wrapper'>
+
+    <div class='flex-container'>
+      <div class='title-container'>
+        {% include 'fields/section-title.twig' with {
+          title: title
+        } only %}
+
+        {% include 'fields/description.twig' with {
+          description: description
+        } %}
+      </div>
+    </div>
+
+    <div class='cards-container'>
+      {% for card in cards %}
+        <div class='f--card'>
+          {% include 'fields/image.twig' with {
+            image: card.image
+          } only %}
+
+          <div class='text-container'>
+            {% include 'fields/cta-title.twig' with {
+              title: card.title
+            } only %}
+
+            {% include 'fields/description.twig' with {
+              description: card.description
+            } only %}
+
+            {% include 'fields/link.twig' with {
+              href: card.href,
+              cta: card.cta
+            } only %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+{% endblock %}

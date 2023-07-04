@@ -1,0 +1,17 @@
+{% extends "base-full.twig" %}
+
+{% set template_name = 'home-page' %}
+{% set layout_name = 'full' %}
+
+{% set hero = post.meta('basic_hero') %}
+
+{% block content %}
+
+  {% include 'components/basic-hero.twig' with {
+    image: Image(hero.hero_image),
+    title: hero.page_title,
+		description: hero.hero_description,
+		link: hero.hero_cta_link,
+  } %}
+
+{% endblock %}

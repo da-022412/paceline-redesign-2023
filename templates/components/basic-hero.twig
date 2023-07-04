@@ -1,7 +1,7 @@
 {% extends 'component.twig' %}
 
 {% set name = 'basic-hero' %}
-{% set container_element = 'section' %}
+{% set container_element = 'div' %}
 {% set container_aria_label = NULL %}
 
 
@@ -13,10 +13,23 @@
     } only %}
   </div>
 
-  <div class='logo-container'>
-    {% include 'fields/image.twig' with {
-      image: logo
+  <div class='text-container'>
+    {% include 'fields/page-title.twig' with {
+      title: title
     } only %}
+
+    {% if description is not empty %}
+      {% include 'fields/description.twig' with {
+        description: description
+      } only %}
+    {% endif %}
+
+    {% if link.href is not empty and link.cta is not empty %}
+      {% include 'fields/link.twig' with {
+        href: link.href,
+        cta: link.cta
+      } only %}
+    {% endif %}
   </div>
 
 {% endblock %}

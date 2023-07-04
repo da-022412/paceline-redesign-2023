@@ -1176,16 +1176,19 @@ body {
       padding-right: 12.5%;
       padding-bottom: 9.375rem;
       padding-left: 12.5%; } }
-  .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper {
-    overflow: visible; }
-    .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-slide {
-      height: auto; }
-    .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination {
-      bottom: -2.5rem; }
-      .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination .swiper-pagination-bullet {
-        background: #586A83; }
-        .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-          background: #47C2EB; }
+  .cc--full-width-sliders .c--full-width-sliders {
+    max-width: 1440px;
+    margin: 0 auto; }
+    .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper {
+      overflow: visible; }
+      .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-slide {
+        height: auto; }
+      .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination {
+        bottom: -2.5rem; }
+        .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination .swiper-pagination-bullet {
+          background: #586A83; }
+          .cc--full-width-sliders .c--full-width-sliders .cards-container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: #47C2EB; }
 
 .cc--icon-cards {
   max-width: 1440px;
@@ -1708,6 +1711,7 @@ body {
           display: block; } }
 
 .cc--news-cards {
+  height: 100%;
   overflow: hidden;
   position: relative; }
   .cc--news-cards .c--news-cards {
@@ -1745,7 +1749,8 @@ body {
             font-size: 2.5rem;
             line-height: 1.25; } }
     .cc--news-cards .c--news-cards .cards-container .swiper {
-      min-height: 14.0625rem; }
+      min-height: 14.0625rem;
+      overflow: hidden; }
       .cc--news-cards .c--news-cards .cards-container .swiper .swiper-slide {
         height: auto; }
       .cc--news-cards .c--news-cards .cards-container .swiper .swiper-button-prev {
@@ -2141,7 +2146,8 @@ body {
             font-size: 2.5rem;
             line-height: 1.25; } }
     .cc--testimonials-cards .c--testimonials-cards .cards-container .swiper {
-      min-height: 14.0625rem; }
+      min-height: 14.0625rem;
+      overflow: hidden; }
       .cc--testimonials-cards .c--testimonials-cards .cards-container .swiper .swiper-slide {
         height: auto; }
       .cc--testimonials-cards .c--testimonials-cards .cards-container .swiper .swiper-button-prev {

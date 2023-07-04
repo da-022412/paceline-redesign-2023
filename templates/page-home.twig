@@ -4,6 +4,7 @@
 {% set layout_name = 'full' %}
 
 {% set hero = post.meta('basic_hero') %}
+{% set info = post.meta('info') %}
 
 {% block content %}
 
@@ -12,6 +13,12 @@
     title: hero.page_title,
 		description: hero.hero_description,
 		link: hero.hero_cta_link,
+  } %}
+
+  {% include 'components/info.twig' with {
+    title: info.info_section_title,
+    description: info.info_description,
+    link: info.info_cta_link,
   } %}
 
 {% endblock %}

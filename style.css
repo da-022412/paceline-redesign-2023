@@ -1434,11 +1434,11 @@ body {
       max-width: 1280px;
       margin: 0 auto; }
     .cc--info .c--info .f--section-title {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       text-align: center; }
       @media screen and (min-width: 768px) {
         .cc--info .c--info .f--section-title {
-          margin-bottom: 5rem; } }
+          margin-bottom: 2.5rem; } }
       .cc--info .c--info .f--section-title h2 {
         font-family: 'Barlow', Helvetica, Arial, sans-serif;
         font-style: normal;
